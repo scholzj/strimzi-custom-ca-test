@@ -1,0 +1,50 @@
+apiVersion: kafka.strimzi.io/v1alpha1
+kind: Kafka
+metadata:
+  name: my-cluster
+  labels:
+    app: my-cluster
+spec:
+  kafka:
+    replicas: 3
+    resources:
+      requests:
+        memory: 2Gi
+        cpu: 500m
+      limits:
+        memory: 2Gi
+        cpu: "1"
+    jvmOptions:
+      -Xms: 1024m
+      -Xmx: 1024m
+    listeners:
+      plain:
+        authentication:
+          type: scram-sha-512
+      tls:
+        authentication:
+          type: tls
+    config:
+      offsets.topic.replication.factor: 3
+      transaction.state.log.replication.factor: 3
+      transaction.state.log.min.isr: 2
+    storage:
+      type: ephemeral
+  zookeeper:
+    replicas: 3
+    resources:
+      requests:
+        memory: 1Gi
+        cpu: "0.3"
+      limits:
+        memory: 1Gi
+        cpu: "0.5"
+    storage:
+      type: ephemeral
+  entityOperator:
+    topicOperator: {}
+    userOperator: {}
+  clusterCa:
+    generateCertificateAuthority: false
+  clientsCa:
+    generateCertificateAuthority: false
