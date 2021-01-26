@@ -6,6 +6,16 @@
 				"ca_constraint": { "is_ca": true, "max_path_len":0 },
 				"expiry": "8000h"
 			},
+			"clusterCA": {
+				"usages": ["cert sign"],
+                		"ca_constraint": { "is_ca": true, "max_path_len":0 },
+				"expiry": "8000h"
+			},
+			"clientsCA": {
+				"usages": ["cert sign"],
+                		"ca_constraint": { "is_ca": true, "max_path_len":0 },
+				"expiry": "8000h"
+			},
 			"email": {
 				"usages": ["s/mime"],
 				"expiry": "8000h"

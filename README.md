@@ -5,7 +5,7 @@ This repository contains files for testing Strimzi with custom CA.
 
 ## Prerequisites
 
-The scripts in this repsoitory are using Bash, were tested on MacOS and require [CFSSL](https://github.com/cloudflare/cfssl) and the [OpenShift `oc` usitlity](https://www.okd.io/download.html#oc-platforms) to be installed on your computer.
+The scripts in this repository are using Bash, were tested on MacOS and require [CFSSL](https://github.com/cloudflare/cfssl) and the [OpenShift `oc` utility](https://www.okd.io/download.html#oc-platforms) to be installed on your computer.
 
 ## Generating certitficates
 
@@ -18,6 +18,7 @@ It will generate following hierarchy:
     * Clients CA (for users created using the Strimzi User Operator)
 
 If you want to configure the subjects of the CAs, edit the corresponging JSON file.
+In case of setting expiry date, change main config.yaml file for appropriate certificate(s).
 
 ## Creating Secrets with the custom CAs
 
