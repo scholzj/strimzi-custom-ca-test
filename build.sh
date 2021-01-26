@@ -9,9 +9,6 @@ cfssl sign -config config.json -profile clusterCA -ca intermediate.pem -ca-key i
 cfssl genkey clients.json | cfssljson -bare clients
 cfssl sign -config config.json -profile clientsCA -ca intermediate.pem -ca-key intermediate-key.pem clients.csr clients.json | cfssljson -bare clients
 
-
-
-
 # Create CRT bundles
 cat strimzi.pem > strimzi-bundle.crt
 cat intermediate.pem >> strimzi-bundle.crt
