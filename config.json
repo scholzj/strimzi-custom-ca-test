@@ -4,26 +4,30 @@
 			"CA": {
 				"usages": ["cert sign"],
 				"ca_constraint": { "is_ca": true, "max_path_len":0 },
-				"expiry": "8000h"
+				"expiry": "87600h"
+			},
+			"server": {
+				"usages": ["server auth", "client auth", "signing", "key encipherment"],
+				"expiry": "87600h"
 			},
 			"clusterCA": {
 				"usages": ["cert sign"],
                 		"ca_constraint": { "is_ca": true, "max_path_len":0 },
-				"expiry": "8000h"
+				"expiry": "87600h"
 			},
 			"clientsCA": {
 				"usages": ["cert sign"],
                 		"ca_constraint": { "is_ca": true, "max_path_len":0 },
-				"expiry": "8000h"
+				"expiry": "87600h"
 			},
 			"email": {
 				"usages": ["s/mime"],
-				"expiry": "8000h"
+				"expiry": "87600h"
 			}
 		},
 		"default": {
 			"usages": ["digital signature", "email protection"],
-			"expiry": "8000h"
+			"expiry": "87600h"
 		}
 	},
 	"auth_key": {
