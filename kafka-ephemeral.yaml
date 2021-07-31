@@ -1,4 +1,4 @@
-apiVersion: kafka.strimzi.io/v1beta1
+apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:
   name: my-cluster
@@ -18,10 +18,16 @@ spec:
       -Xms: 1024m
       -Xmx: 1024m
     listeners:
-      plain:
+      - name: plain
+        port: 9092
+        tls: false
+        type: internal
         authentication:
           type: scram-sha-512
-      tls:
+      - name: tls
+        port: 9093
+        tls: true
+        type: internal
         authentication:
           type: tls
     config:
