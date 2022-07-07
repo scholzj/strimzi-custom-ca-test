@@ -5,7 +5,7 @@ This repository contains files for testing Strimzi with custom CA.
 
 ## Prerequisites
 
-The scripts in this repository are using Bash, were tested on MacOS and require [CFSSL](https://github.com/cloudflare/cfssl) and the [OpenShift `oc` utility](https://www.okd.io/download.html#oc-platforms) to be installed on your computer.
+The scripts in this repository are using Bash, were tested on MacOS and require [CFSSL](https://github.com/cloudflare/cfssl) and the [Kubernetes `kubectl` utility](https://kubernetes.io/docs/reference/kubectl/kubectl/) to be installed on your computer.
 
 ## Generating certitficates
 
@@ -30,7 +30,7 @@ If your cluster is using different name, you have to modify the script.
 ## Deploying cluster
 
 Once the Secrets are ready, you can just deploy the Kafka cluster.
-You can use the example YAML file from this repo: `oc apply -f kafka-ephemeral.yaml`.
+You can use the example YAML file from this repo: `kubectl apply -f kafka-ephemeral.yaml`.
 
 # Cleaning up
 
