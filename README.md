@@ -38,7 +38,7 @@ You can use the example YAML file from this repo: `kubectl apply -f kafka-persis
 
 * Pause reconciliation:
   ```
-  kubectl annotate kafka my strimzi.io/pause-reconciliation="true" --overwrite
+  kubectl annotate kafka my-cluster strimzi.io/pause-reconciliation="true" --overwrite
   ```
 * Configure custom CAs:
   ```yaml
@@ -71,7 +71,7 @@ You can use the example YAML file from this repo: `kubectl apply -f kafka-persis
   ```
 * Unpause reconciliation:
   ```
-  kubectl annotate kafka my strimzi.io/pause-reconciliation="false" --overwrite
+  kubectl annotate kafka my-cluster strimzi.io/pause-reconciliation="false" --overwrite
   ```
 
 ## Cleaning up
