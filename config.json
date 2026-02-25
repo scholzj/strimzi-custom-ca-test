@@ -6,6 +6,10 @@
 				"ca_constraint": { "is_ca": true, "max_path_len":0 },
 				"expiry": "87600h"
 			},
+			"client": {
+				"usages": ["client auth", "signing", "key encipherment"],
+				"expiry": "87600h"
+			},
 			"server": {
 				"usages": ["server auth", "client auth", "signing", "key encipherment"],
 				"expiry": "87600h"
